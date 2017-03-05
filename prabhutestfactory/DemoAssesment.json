@@ -1,0 +1,55 @@
+{
+  "name": "DemoAssesment",
+  "properties": {
+    "description": "Test Description",
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "BlobSource",
+            "recursive": false
+          },
+          "sink": {
+            "type": "SqlSink",
+            "writeBatchSize": 0,
+            "writeBatchTimeout": "00:00:00"
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "columnMappings": "Prop_0:Id,Prop_1:client,Prop_2:groupName,Prop_3:groupDisplayName,Prop_4:page,Prop_5:displayName,Prop_6:thumbnailUrl,Prop_7:reportState"
+          }
+        },
+        "inputs": [
+          {
+            "name": "InputDataset-n5o"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "OutputDataset-n5o"
+          }
+        ],
+        "policy": {
+          "timeout": "1.00:00:00",
+          "concurrency": 1,
+          "executionPriorityOrder": "NewestFirst",
+          "style": "StartOfInterval",
+          "retry": 3,
+          "longRetry": 0,
+          "longRetryInterval": "00:00:00"
+        },
+        "scheduler": {
+          "frequency": "Day",
+          "interval": 1
+        },
+        "name": "Activity-0-PrabhuKarthick_csv->[dbo]_[DestinationTable]"
+      }
+    ],
+    "start": "2017-03-03T13:47:00Z",
+    "end": "2017-03-04T18:30:00Z",
+    "isPaused": false,
+    "pipelineMode": "Scheduled"
+  },
+  "$schema": "http://datafactories.schema.management.azure.com/schemas/2015-09-01/Microsoft.DataFactory.Pipeline.json"
+}

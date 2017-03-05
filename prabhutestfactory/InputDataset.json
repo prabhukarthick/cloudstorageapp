@@ -1,0 +1,57 @@
+{
+  "name": "InputDataset",
+  "properties": {
+    "structure": [
+      {
+        "name": "Prop_0",
+        "type": "String"
+      },
+      {
+        "name": "Prop_1",
+        "type": "String"
+      },
+      {
+        "name": "Prop_2",
+        "type": "String"
+      },
+      {
+        "name": "Prop_3",
+        "type": "String"
+      },
+      {
+        "name": "Prop_4",
+        "type": "String"
+      },
+      {
+        "name": "Prop_5",
+        "type": "String"
+      },
+      {
+        "name": "Prop_6",
+        "type": "String"
+      },
+      {
+        "name": "Prop_7",
+        "type": "String"
+      }
+    ],
+    "published": false,
+    "type": "AzureBlob",
+    "linkedServiceName": "Source-BlobStorage-n5o",
+    "typeProperties": {
+      "fileName": "PrabhuKarthick.csv",
+      "folderPath": "demoblobs",
+      "format": {
+        "type": "TextFormat",
+        "columnDelimiter": ","
+      }
+    },
+    "availability": {
+      "frequency": "Day",
+      "interval": 1
+    },
+    "external": true,
+    "policy": {}
+  },
+  "$schema": "http://datafactories.schema.management.azure.com/schemas/2015-09-01/Microsoft.DataFactory.Table.json"
+}

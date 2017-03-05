@@ -1,0 +1,52 @@
+{
+  "name": "OutputDataset",
+  "properties": {
+    "structure": [
+      {
+        "name": "Id",
+        "type": "String"
+      },
+      {
+        "name": "client",
+        "type": "String"
+      },
+      {
+        "name": "groupName",
+        "type": "String"
+      },
+      {
+        "name": "groupDisplayName",
+        "type": "String"
+      },
+      {
+        "name": "page",
+        "type": "String"
+      },
+      {
+        "name": "displayName",
+        "type": "String"
+      },
+      {
+        "name": "thumbnailUrl",
+        "type": "String"
+      },
+      {
+        "name": "reportState",
+        "type": "String"
+      }
+    ],
+    "published": false,
+    "type": "AzureSqlTable",
+    "linkedServiceName": "Destination-SQLAzure",
+    "typeProperties": {
+      "tableName": "[dbo].[DestinationTable]"
+    },
+    "availability": {
+      "frequency": "Day",
+      "interval": 1
+    },
+    "external": false,
+    "policy": {}
+  },
+  "$schema": "http://datafactories.schema.management.azure.com/schemas/2015-09-01/Microsoft.DataFactory.Table.json"
+}
